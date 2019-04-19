@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/common.js"></script>
+    <script src="./js/packageF.js"></script>
+    <script src="./js/mathF.js"></script>
+</head>
+<body>
+<script>
+    let testWitch = 1,
+        app_Common = MYAPP.namespace('common'),
+        app_Package = MYAPP.namespace('packageF'),
+        app_Math = MYAPP.namespace('mathF'),
+        log = app_Common.log;
+
+    switch (testWitch) {
+        case 1:
+            let sum = app_Package.curry(app_Math.sum, 3)(4, 5);
+            log(sum);
+
+            let sum1 = app_Package.curry(app_Math.sum, 3);
+            sum = app_Package.curry(sum1, 4,8)(6);
+            log(sum);
+
+            break;
+        case 2:
+            break;
+
+    }
+
+</script>
+</body>
+</html>
